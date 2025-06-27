@@ -1,0 +1,313 @@
+
+LECCION I
+
+⚠️Debes instalar Node.js ⚠️
+En tu computadora antes de crear, instalar o ejecutar un proyecto React (o Next.js),
+Sin Node.js, no podrás utilizar los comandos necesarios ni levantar el entorno de desarrollo.
+con las herramientas(npm o yarn) para instalar dependencias, compilar el código y ejecutar 
+el servidor de desarrollo.
+
+Los comandos principales para crear y ejecutar un proyecto Next.js (como npx create-next-app, npm install, 
+npm run dev) requieren Node.js y su gestor de paquetes npm o npx, que vienen incluidos con Node.js
+
+
+Que es Node.js⁉️🤔
+un entorno de ejecucion JS, diferente al navegador. Como en:
+✔️La Terminal/Línea de Comandos.
+✔️Servidores y Nube: utilizando servicios como AWS, Heroku, Google Cloud, y Azure.
+✔️Aplicaciones de Escritorio: Con Electron, se ejecutan en el entorno de escritorio del usuario y no requieren una terminal.
+✔️Contenedores: dentro de contenedores, como Docker.
+...
+💡Que puedo desarrollar con Node.js?
+Es una plataforma versátil para desarrollar variedad de aplicaciones y herramientas.
+✔️Aplicaciones Web.
+✔️Servidores Web y APIs RESTful: manejando solicitudes HTTP.
+✔️Red y Protocolos: crear servidores y clientes para comunicaciones de red, manejar solicitudes HTTP y realizar consultas DNS.
+...
+
+
+🚀Instalacion Node.js en tu computadora (Windows):
+1. Descargar el instalador de Node.js
+En la página oficial de Node.js: https://nodejs.org/en/download
+Descarga la versión LTS (Long-Term Support), que es la más estable y recomendada para la mayoría de usuarios.
+El instalador incluye automáticamente npm y npx, no necesitas instalarlos por separado.
+
+2. Ejecutar el instalador
+Abre el archivo descargado (por ejemplo, node-vxx.x.x-x64.msi) haciendo doble clic.
+Sigue el asistente de instalación: acepta el acuerdo de licencia, elige la carpeta de instalación (puedes dejar la predeterminada), 
+y asegúrate que la opción para instalar npm esté seleccionada.
+El instalador también añade Node.js y npm a la variable de entorno PATH, para que puedas usarlos desde la línea de comandos sin configuraciones adicionales.
+
+3. Completar la instalación
+Haz clic en “Instalar” y espera a que finalice el proceso.
+Si quieres, puedes seleccionar instalar herramientas adicionales para compilar módulos nativos, pero no es obligatorio para la mayoría de proyectos.
+
+4. Verificar la instalación
+Abre la terminal o símbolo del sistema (CMD o PowerShell).
+Ejecuta estos comandos para comprobar que todo está instalado correctamente:
+    node -v
+    npm -v
+    npx -v
+Cada comando debe mostrar la versión instalada, confirmando que Node.js, npm y npx están listos para usar.
+⭐Tendrás instalado Node.js junto con npm y npx, herramientas esenciales para trabajar con proyectos modernos como Next.js o React.⭐
+
+
+
+⚠️Cambiar o actualizar la versión de Node.js ⚠️
+tienes varias opciones, siendo la más recomendada usar un gestor de versiones como nvm 
+(Node Version Manager), que te permite instalar y cambiar 
+fácilmente entre distintas versiones de Node.js sin desinstalar manualmente.
+En Windows:
+1. Descarga e instala nvm-windows.
+2. Abre la consola y ejecuta:
+3. Corre en la terminal:
+    nvm install latest
+    nvm use latest
+
+    nvm list available //Lista las versiones disponibles para elegir la que quieres instalar
+    nvm install 22.17.0 
+    nvm use  22.17.0 
+    
+    node -v //Verifica la versión
+
+
+
+*************************************************************************  REACT.JS **********************************************************************
+React es una biblioteca de JavaScript para construir interfaces de usuario, 
+para aplicaciones web, móviles, de terminal, etc.
+
+
+🚀CREANDO UN PROYECTO CON Next.js🚀
+1. Dentro de la carpeta donde quieras crear el proyecto, ejecuta en la terminal:
+    npx create-next-app@latest my-app 
+
+2. Navega a la carpeta del proyecto creado, usando el comando "cd":
+    cd my-app
+
+3.  Ejecuta el servidor de la aplicacion que has creado.
+    npm run dev 
+
+
+Carpeta/Archivo        | ¿Qué es?                                    | ¿Para qué sirve?                               | Ejemplo de uso                         
+-----------------------|---------------------------------------------|------------------------------------------      |----------------------------------------
+.next                  | Carpeta generada por Next.js                | Archivos compilados y temporales               | No modificar                 🚫                        
+node_modules           | Codigo de Depend. instlls con "npm install" | Librerías del proyecto                         | npm install react            🚫                   
+public                 | para estáticos accesibles desde el browser  | Imágenes, favicon                              | se accese con -> /logo.png   ✍🏽                         
+src                    | Código fuente principal (✍🏽 por ti)         | Componentes, páginas, estilos, contiene /app   | src/components/NavBar.js     ✍🏽         
+⭐src/app              | Sistema de rutas Next.js                    | Define páginas y rutas 👀por cartepa           | src/app/about/page.js        ✍🏽               
+favicon.ico            | Icono del navegador                         | Identidad visual                                | Cambiar por tu logo           ✍🏽                
+globals.css            | Estilos globales, 👀class -> className      | CSS para toda la app                           | body { background: #fff; }    ✍🏽         
+layout.js              | Marco generico y repetible a todas ls rutas | Tiene: 👀<html <body y renderiza "children"    | Comunes: <Header /><Footer />  ✍🏽            
+page.js                | Página principal    es =>  "/"              | Contenido de la página inicial                 | "Bienvenido a mi app"         ✍🏽           
+.gitignore             | Ignorar archivos en Git                     | archivos generados automáticamente o secretos  | node_modules/                 ✍🏽          
+jsconfig.json          | Configuración de JavaScript                 | Alias de importación                           | "@/components/Button"                 
+eslint.config.mjs      | Configuración de ESLint                     | Reglas de calidad de código                    | "no-unused-vars": "error"             
+next.config.mjs        | Configuración de Next.js                    | Personalizar el framework                      | images: { domains: [...] }            
+package.json           | Configuración del proyecto                  | Scripts, dependencias, metadatos               | "start": "next start"                 
+package-lock.json      | Control de versiones de dependencias        | Instalaciones idénticas                        | No modificar                  🚫                        
+postcss.config.mjs     | Configuración de PostCSS                    | Plugins para CSS                               | TailwindCSS                         
+README.md              | Documentación                               | Instrucciones y guía del proyecto              | Cómo instalar y correr la app         
+
+
+
+📍RUTAS - VITAS 📍
+src/app/ -> todas las vistas.
+src/app/page.js será la página principal (/).
+Si creas src/app/about/page.js, tendrás la ruta /about.
+
+
+
+
+🧠🤯ASPECTOS REACT 🧠🤯
+✅En React de class → className -> e.g: className='text-lg text-red-900'
+✅En React de for → htmlFor
+✅En React de onclick → onClick
+✅Un React Component (RC) es una función JavaScript que puede contener otras funciones (handleEvents) y que debe retorna un unico Ele JSX (Mix entre JS y XML). 
+✅Los RC pueden ocupar los Attrb HTML que ya conocemos, pero en camellCase, y el valor se asigna entre llaves href={"./"} 
+Si el valor es TDD String, no requiere {}
+✅Los RC pueden ocupar el Attrb HTML style, que es TDD Obj, seria asi → style={{fontSize:'50px', color:'blue'}}
+✅Los RC muestrar u operan con valores entre llaves {}. así, podemos: Establecer expresiones JS que devuelva un valor, 
+pero NO sentencias.
+Como el llamado de una función que devuelve un TDD o una variable que representa un valor. pero no un condicional.
+Esto explica por qué puedes usar un operador ternario (que es una expresión) y expresiones booleanas, pero NO un if (que es una sentencia).
+
+💡Diferencia clave:
+Operador ternario (condición ? expr1 : expr2)
+Es una expresión que devuelve un valor, por lo que puede estar dentro de las llaves en JSX y producir directamente un resultado para renderizar.
+Sentencia if
+Es una estructura de control que no devuelve un valor, sino que ejecuta código. No puede usarse directamente dentro de las llaves 
+porque JSX espera una expresión que devuelva algo.
+
+✅Los RC deben hacer return de un solo Ele JSX envoltorio.
+✅Los RC se nombra con UpperCamellCase y son una tag, e.g: <Header/>
+✅Los RC pueden permitirle a <Padre agregarle PROPS. El cual es un TDD Obj que puede contiener:
+1. Propiedades html y costumizadas como: href, tittle, nanme...
+2. Contenido o Ele HTML como: "children". 
+para lograrlo, <Hijo declara que recibira esta informacion extrana o externa mediante parametros → Hijo({children, title, ...}){}
+<Padre las definira cuando llame a <Hijo como lo harias con un Attr HTML → <Hijo title={'hola'} data={jsonData}/>
+
+✅En React los <a son <Link href='./' >Click on me!</Link>
+👀import Link from 'next/link';                    → Importalo 
+export default function Navbar() {
+  return (
+    <btn>
+      👀<Link href="/about">Sobre Nosotros</Link>  → Usalo
+    </btn>
+  );
+}
+
+✅La función RC debe ser exportada con la directiva "export", Sea "default" o no. Si es por default no requerirá {} al momento de su importación.  
+✅El RC al ser usado debe ser "import" en <Padre
+✅Incluso los React Componentes rutas, deben ser "export default", aunque NO sean anidados en un <Padre., 
+Por ejemplo app/about/page.jsx debe ser: export default function HomePage(){}
+✅Si tu RC usa Hooks debe colocar al top del file la directiva: "use client"
+
+💡REACT ESTA BASADO EN COMPONENTES.💡
+Un componente en React es una función JavaScript que retorna JSX.
+React crea y renderiza un árbol, mediante cada componente react anidado, (componente <Padre anida a componente <Hijo).
+Con los RC se reutilizas código, cambiando solo el contenido renderizado. así, la UI se conforma con pequeñas piezas reutilizables, 
+Los RC son usados al ser importados y llamados dentro de sus <padres
+Al RC se le puedes pasar propiedades (PROPS) e hijos HTML (children: elementos JSX), para customizar característica al momento de usarlo.
+
+
+
+⁉️DONDE UBICO ESOS COMPONENTES REUTILIZABLES?⁉️
+/my-next-app
+  /src
+    /app
+      /page.js
+    /components
+      /Button.js
+      /Navbar.js
+
+
+💪🏽👷🏽‍♀️TAREAS 💪🏽👷🏽‍♀️
+1. Limpia src/app/page.js y renderiza un mensaje corto, que es el "/" de la app
+2. Crea un RC Button.jsx en src/components/Button.jsx
+3. Renderiza (2) en (1).
+4. Crea src/app/about/page.js, con un saludo mas renderiza (2), que sera el "/about" de la app
+
+
+⁉️¿QUE LENGUAJES USA REACT PARA CREAR SUS COMPONENTES?⁉️
+Un RC es una función JavaScript que retorna JSX (HTML dentro de JS). 
+JSX (JavaScript y XML) es una sintaxis especial de React que permite escribir HTML dentro de JavaScript.
+
+CREACION DE LOS REACT COMPONENTES EN src/..
+Un React Component es una function JavaScript que crea un elemento HTML funcional y reutilizable (mediante PROPS). 
+Los props son valores que se pasan de un componente a otro como argumentos.
+Un React Component es una función que debe ser exportada con la directiva export, Sea default o no. 
+Si es por default no requerirá {} al momento de su importación.  
+Todo React Component se nombra con UpperCamellCase. 
+Toda export function React Component debe hacer return del elemento a renderizar, pero espera solo un elemento. 
+Así que envuelve todo el component en una <div> o <></>, cuando sea necesario renderizar mas de 1 elemento HTML
+
+
+📍RUTAS - VITAS 📍
+💡Next.js emplea un sistema de rutas basado en archivos: Cada archivo dentro de: src/app/laCarpetaRuta/page.js se convierte automáticamente en una ruta. 
+Para navegar entre páginas, usas el componente <Link> de Next.js o el hook useRouter().
+
+📂src/app
+	layout.js      ← Layout global
+	page.js        ← Ruta “/”
+	📂about/
+		page.js      ← Ruta “/about”
+	
+  🧠🤔LUEGO LO VEREMOS MEJOR 🧠🤔
+	📂api/ 		     ← En App Router, las rutas de API se crean dentro de app/api/ como un archivo route.js o route.ts.
+	📂users
+		/route.js    ← Endpoint “api/users”
+
+src/app/page.js será la página principal (/).
+Si creas src/app/about/page.js, tendrás la ruta /about.
+
+💡Incluso los React Componentes rutas, deben ser "export default", aunque NO sean anidados en un <Padre., 
+Por ejemplo app/about/page.jsx debe ser: export default function HomePage(){}
+
+
+
+®️RESUMEN!®️
+React es una biblioteca de JavaScript para construir interfaces de usuario, lo que funciona para aplicaciones web, móviles, de terminal, etc. 
+Tenemos que reactDOM sí que es específico del navegador.
+React está basada en componentes, para reutilizar código, cambiando solo el contenido renderizado. así, la UI se conforma con pequeñas piezas reutilizables, 
+llamadas React Components, donde al cambiarle una característica (PROPS) al componente, este cambio se replicará.
+Finalmente, React crea y renderiza un árbol, mediante cada componente react anidado.
+Un componente en React es una función JavaScript que retorna JSX (HTML dentro de JS).
+
+
+
+************************** PROPS
+💡El sistema de PROPS en React (y por extensión en Next.js) solo permite pasar información de <Padres a <Hijos directamente, 
+es decir, cuando los componentes están anidados dentro del árbol de componentes. 
+
+💡Cuando el componente <Padre le pasa variables de estado (y sus setters) y otras funciones como PROPS a sus <Hijos para que estos las usen, 
+a esta práctica se le llama "pasar PROPS" o "prop drilling" en React. 
+Es el mecanismo estándar para que los <Hijos puedan acceder y utilizar tanto el valor del estado como 
+la función que lo actualiza, aunque el estado lo gestiona <Padre. Siendo la forma en la que <Hijo le comprate data a <Padre 
+
+💡Cuando tienes componentes o páginas en carpetas diferentes para el enrutamiento, 
+no puedes pasar PROPS directamente entre ellas, en ese caso usar contexto o:
+🔄 Opción 1: Estado Global con Zustand (Recomendado)
+Zustand es una biblioteca ligera para manejar estado global en React. Es ideal para compartir estado entre componentes/páginas sin necesidad de contexto o props.
+🔄 Opción 2: Parámetros de URL (Para estados simples)
+Si el estado es temporal y puede viajar en la URL (ej: filtros, búsquedas).
+🔄 Opción 3: React Context (Solo si comparten layout)
+Si las páginas están bajo un layout común, puedes usar contexto.
+
+
+
+
+
+
+LECCION II
+🪝Los hooks 🪝
+Son funciones especiales que te permiten “enganchar” características avanzadas de React en componentes funcionales, 
+como el manejo de estado, el ciclo de vida, el contexto y más, sin necesidad de escribir componentes de clase.
+Debes importarlos, para usarlo en su RC., import { useState } from 'react';
+Si tu RC usa Hooks debe colocar al top del file la directiva: "use client"
+
+💡🤯 useState() 💡🤯
+Es un hook que permite agregar una variable de estado a un tu RC.
+Devuelve un arreglo con dos elementos:
+1. El valor actual del estado.
+2. Una función para actualizar ese estado.
+
+
+⁉️🤔¿Cuándo usar useState?
+
+✅Gestionar datos locales del componente:
+Por ejemplo, un contador, un texto, un booleano para mostrar/ocultar algo.
+
+✅Manejo de formularios:
+Guardar y actualizar el valor de inputs, selects, checkboxes, etc.
+
+✅Controlar la visualización de elementos:
+Mostrar u ocultar modales, menús, mensajes, etc.
+
+✅Almacenar datos temporales: 
+Como respuestas de usuario, estados de carga, errores, etc.
+Cuando recarges la page o naveges entre las vistas (rutas), el dato del US se perdera.
+Esto sucede porque el estado de React vive solo mientras el componente está montado en memoria; 
+al recargar o cambiar de ruta, el componente se desmonta y su estado se reinicia.
+💡Si deseas, persistencia usa el LocalStorage.
+
+✅Para guardar la información que recuperas de una API y luego pintarla en la UI. Esta es la forma estándar en React
+ para manejar datos dinámicos que pueden cambiar durante el ciclo de vida del componente.
+Normalmente, la llamada a la API se hace dentro de el Hook useEffect() para que se ejecute cuando el componente se monta,
+ y el resultado se guarda en un estado con useState().
+
+
+💡🤯 useEffect() 💡🤯
+
+🧗🏽⛹🏽🏋🏽‍♀️DESAFIO 🧗🏽⛹🏽🏋🏽‍♀️
+Investiga como deberia usar los hooks useEffect() y useState(), para hacer una pericion GET a la siguiente API:
+https://whenisthenextmcufilm.com/api y renderizar en un React Componente de un template <Card, con:
+1. el titulo de la sigueinte pelicula de marvel a estrenar.
+2. la imagen promocionar de la pelicula.
+3. la fecha de estreno.
+
+
+
+
+
+LECCION III
+
